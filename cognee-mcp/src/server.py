@@ -432,6 +432,9 @@ def load_class(model_file, model_name):
 
 
 async def main():
+    # Redirect all stdout to stderr to prevent MCP communication issues
+    sys.stdout = sys.stderr
+    
     parser = argparse.ArgumentParser()
 
     parser.add_argument(
